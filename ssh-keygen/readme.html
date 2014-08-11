@@ -1,0 +1,68 @@
+<html lang="fa">
+<head>
+	<title>ssh-keygen</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		body {
+			direction:rtl;
+			font-size: 18px;
+			font-family: "traditional arabic",tahoma;
+		}
+		
+		.container {
+			padding-top:30px;
+			padding-bottom:30px;
+			padding-right:60px;
+			padding-left:60px;
+		}
+		.latin {
+			font-family: "trebuchet ms",tahoma;
+			font-size: .62em;
+		}
+		.float-left {
+			float: left;
+		}
+		
+		li {
+			
+			font-size:1.2em;
+		}
+		
+		p {
+			font-size:1.5em;
+			text-align: justify;
+			text-indent: 30px;
+		}
+		code {
+			font-size: .62em;
+		}
+	
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		
+		<p>
+			در سرور A
+			<span class="float-left"><code>ssh-keygen</code></span>
+		</p>
+		<p>
+			public key سرور A باید به سرور B انتقال یابد
+			<span class="float-left"><code>ssh-copy-id root@xxx.xxx.xxx.xxx</code></span>
+		</p>
+		
+		
+	</div>
+	<script>
+		$(document).ready(function() {
+			$('p').each(function(index, element) {
+				$(this).html($(this).html().replace(/(?![^<]*>|[^<>]*<\/)([a-z\.,-\/#!$%\^&\*;:{}=\-_`~()]+)/gi, '<span class="latin">$1</span>'));
+			});
+			
+		
+		});
+	</script>
+</body>
+</html>
