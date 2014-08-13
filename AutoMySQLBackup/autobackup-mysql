@@ -1,0 +1,3 @@
+#
+01  4     * * *     root   /usr/local/bin/automysqlbackup /etc/automysqlbackup/automysqlbackup.conf
+#

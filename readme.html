@@ -15,6 +15,18 @@
 			padding-right:60px;
 			padding-left:60px;
 		}
+		code {
+			padding: 2px 4px;
+			font-size: 90%;
+			color: #c7254e;
+			white-space: nowrap;
+			background-color: #f9f2f4;
+			border-radius: 4px;
+		}
+		code .latin {
+			font-size: 1em;
+			font-family: "Courier New", monospace;
+		}
 		.latin {
 			font-family: "trebuchet ms",tahoma;
 			font-size: .62em;
@@ -30,7 +42,11 @@
 			text-align: justify;
 			text-indent: 30px;
 		}
-	
+		
+		a, a:hover, a:visited {
+			text-decoration: none;
+			color: blue;
+		}
 	
 	</style>
 	<script src="jquery.min.js"></script>
@@ -39,6 +55,7 @@
 
 	<div class="container">
 		<h2>توضیحات کلی</h2>
+		
 		<p>
 			جهت بک‌آپ گیری سایت های سرور B روی سرور A، باید محتویات هر سایت B را در یک دایرکتوری جدا روی سرور A سینک(sync) کرد. این دیرکتوری بعدا باید زیپ(&lrm;*.tar.gzip) شده و در یک دایرکتوری(Backup) ذخیره شود. مرحله زیپ شدن فقط وقتی انجام می‌شود که مرحله سینک با موفقیت انجام شده باشد. دستورات سینک و زیپ در یک اسکریپت تعریف شده‌اند که باید در مواقع مقرر، تعیین شده به‌وسیله کرون(cron)، اجرا شوند.
 		</p>
@@ -55,13 +72,14 @@
 			برای ساختن سایت جهت مشاهده و دانلود بک‌آپ ها از Apache استفاده می‌کنیم. برای درست کردن پسورد برای کاربرانی که بک‌آپ ها را چک می‌کنند از دستور htpasswd استفاده می‌کنیم.
 		</p>
 		
+		<br>
 	
 		<h2>ترتیب انجام مراحل</h2>
 	
 	
 		<p>
 			<ol>
-				<li>ssh-keygen</li>
+				<li><a href="./ssh-keygen/readme.html" target="_blank">ssh-keygen</a></li>
 				<li>automysqlbackup</li>
 			</ol>
 		</p>
@@ -69,7 +87,7 @@
 	<script>
 		$(document).ready(function() {
 			$('p').each(function(index, element) {
-				$(this).html($(this).html().replace(/([a-z\.,-\/#!$%\^&\*;:{}=\-_`~()]+)/gi, '<span class="latin">$1</span>'));
+				$(this).html($(this).html().replace(/([a-z\.,-\/#!$%\^&\*;:{}=\-_`~()]+)(?![^<]*>)/gi, '<span class="latin">$1</span>'));
 			});
 			
 		

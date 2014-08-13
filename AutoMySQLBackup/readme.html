@@ -1,0 +1,146 @@
+<html lang="fa">
+<head>
+	<title>AutoMySQLBackup</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		body {
+			direction:rtl;
+			font-size: 18px;
+			font-family: "traditional arabic",tahoma;
+		}
+		
+		.container {
+			padding-top:30px;
+			padding-bottom:30px;
+			padding-right:60px;
+			padding-left:60px;
+		}
+		.red {
+			color: red;
+		
+		}
+		code {
+			padding: 2px 4px;
+			font-size: 90%;
+			color: #c7254e;
+			white-space: nowrap;
+			background-color: #f9f2f4;
+			border-radius: 4px;
+		}
+		code .latin {
+			font-size: 1em;
+			font-family: "Courier New", monospace;
+		}
+		.latin {
+			font-family: "trebuchet ms",tahoma;
+			font-size: .62em;
+		}
+		.alignleft {
+			float: left;
+			text-align: left;
+		}
+		.alignright {
+			float: right;
+			text-align: right;
+		}
+		.clearfix {
+			clear: both;
+		}
+		li {
+			
+			font-size:1.2em;
+		}
+		
+		p {
+			font-size:1.5em;
+			text-align: justify;
+			text-indent: 30px;
+		}
+		code {
+			font-size: .62em;
+		}
+		a, a:hover, a:visited {
+			text-decoration: none;
+			color: blue;
+		}
+	
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+
+	<div class="container">
+
+		<div>
+			<p class="alignright">برای نصب automysqlbackup، <a href="./automysqlbackup">فایل "automysqlbackup"</a> را به مسیر <code>&lrm;/usr/local/bin/automysqlbackup</code> منتقل کنید و پرمیژن فایل را تغییر دهید:</p>
+			<p class="alignleft"><code>chmod +x /usr/local/bin/automysqlbackup</code></p>
+			
+			<div class="clearfix"></div>
+		</div>
+		<div>
+			<p class="alignright"><a href="./automysqlbackup.conf">فایل "automysqlbackup.conf"</a> را به مسیر <code>&lrm;/etc/automysqlbackup/automysqlbackup.conf</code> منتقل کنید. تنظیمات مربوط به بک آپ گیری از دیتابیس را باید در این فایل اعمال کنید:</p>
+			<p class="alignleft">
+			
+			<br>
+			<code>CONFIG_mysql_dump_username='backupuser'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_password='password'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_host='127.0.0.1'&lrm;</code>
+			<br>
+			<code>CONFIG_backup_dir='/var/backup/db'&lrm;</code>
+			<br>
+			<code>&lrm;#CONFIG_db_exclude=('information_schema' 'mysql' 'performance_schema')&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_port=3306&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_commcomp='no'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_usessl='no'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_max_allowed_packet='16MB'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_single_transaction='no'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_full_schema='yes'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_dbstatus='yes'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_create_database='yes'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_use_separate_dirs='yes'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_compression='gzip'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_latest='yes'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_latest_clean_filenames='yes'&lrm;</code>
+			<br>
+			<code>CONFIG_mysql_dump_differential='no'&lrm;</code>
+			<br>
+			<code>CONFIG_encrypt='no'&lrm;</code>
+			<br>
+			<code>umask 0077&lrm;</code>
+			<br>
+			</p>
+			
+			<div class="clearfix"></div>
+		</div>
+
+		<div>
+			<p class="alignright"><a href="./autobackup-mysql">فایل "autobackup-mysql"</a> را به مسیر <code>&lrm;/etc/cron.d/autobackup-mysql</code> انتقال دهید.</p>
+		</div>
+		
+		
+	</div>
+	<script>
+		$(document).ready(function() {
+			$('p').each(function(index, element) {
+				$(this).html($(this).html().replace(/([a-z\.,-\/#!$%\^&\*;:{}=\-_`~()]+)(?![^<]*>)/gi, '<span class="latin">$1</span>'));
+			});
+			
+		
+		});
+	</script>
+</body>
+</html>
