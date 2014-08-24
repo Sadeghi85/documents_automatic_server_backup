@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+## Database backups
+
+STATUS=$(ls /var/backup/db/latest)
+if [ "$STATUS" != "" ]; then
+    STATUS=$(tar -czf "/media/Backups/db_all.tar.gz" "/var/backup/db/latest" 2>&1);
+fi
+
+## Website backups
+
+STATUS=$(rsync -avz --delete -e 'ssh' root@xxx.xxx.xxx.xxx:/var/www/web1/web/ /var/www/web1/web 2>&1)
+if [ $? = 0 ]; then
+    STATUS=$(tar -czf "/media/Backups/web1.tar.gz" "/var/www/web1/web" 2>&1);
+fi
+
+### Correcting permissions
+
+chmod -R 777 "/media/Backups"

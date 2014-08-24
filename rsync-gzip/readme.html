@@ -1,6 +1,6 @@
 <html lang="fa">
 <head>
-	<title>ssh-keygen</title>
+	<title>rsync-gzip</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<style type="text/css">
 		body {
@@ -15,6 +15,10 @@
 			padding-right:60px;
 			padding-left:60px;
 		}
+		.red {
+			color: red;
+		
+		}
 		code {
 			padding: 2px 4px;
 			font-size: 90%;
@@ -22,10 +26,6 @@
 			white-space: nowrap;
 			background-color: #f9f2f4;
 			border-radius: 4px;
-		}
-		.red {
-			color: red;
-		
 		}
 		code .latin {
 			font-size: 1em;
@@ -72,18 +72,8 @@
 	<div class="container">
 
 		<div>
-			<p><span class="red">توجه:</span> SELinux باید در هر دو سرور غیر فعال باشد</p>
-		</div>
-		<div>
-			<p class="alignright">در سرور A (سرور بک آپ):</p>
-			<p class="alignleft"><code>ssh-keygen</code></p>
-			
-			<div class="clearfix"></div>
-		</div>
-
-		<div>
-			<p class="alignright">public key سرور A باید به سرور B (سرور اصلی) انتقال یابد:</p>
-			<p class="alignleft"><code>ssh-copy-id root@xxx.xxx.xxx.xxx</code></p>
+			<p class="alignright"><a href="./automysqlbackup">فایل "automyserverckup"</a> را به مسیر <code>&lrm;/usr/local/bin/automysqlbackup</code> منتقل کنید و پرمیژن فایل را تغییر دهید:</p>
+			<p class="alignleft"><code>chmod +x /usr/local/bin/automysqlbackup</code></p>
 			
 			<div class="clearfix"></div>
 		</div>
